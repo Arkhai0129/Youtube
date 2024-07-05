@@ -9,12 +9,27 @@ body {
 img {
   cursor: pointer;
 }
+a{
+  text-decoration: none;
+  color:black;
+}
+
+a:visited{
+  text-decoration: none;
+  color:rgb(13, 63, 199)
+}
 
 header {
+  position: fixed;
+  top:0px;
+  width:100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 5px 0px 0px 20px;
+  padding: 0px 0px 0px 20px;
+  background-color: white;
+  z-index: 1;
+  
 }
 
 #nav_left {
@@ -98,9 +113,30 @@ header {
   bottom: -16px;
 }
 #side_menu {
+  position:fixed;
+  top:50px;
   display: flex;
   flex-direction: column;
-  margin: 10px 10px 0 30px;
+  margin: 10px 30px 0 30px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 50px;
+  bottom: 0px;
+ 
+}
+
+::-webkit-scrollbar{
+  background-color: rgb(255, 255, 255);
+  width:10px;
+  height: 100px;
+}
+::-webkit-scrollbar-thumb{
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(191, 190, 190);
+ 
 }
 
 .side_menu_element {
@@ -153,11 +189,14 @@ h2.Subscribed {
 }
 
 #navigation {
-  position: absolute;
-  top: 60px;
-  left: 280px;
   display: flex;
+  background-color: white;
+  position: fixed;
+  top: 50px;
+  left: 275px;
   cursor: pointer;
+  z-index: 1;
+  width: 1500px;
 }
 p.navigator {
   padding: 7px 15px 7px 15px;
@@ -167,6 +206,7 @@ p.navigator {
   font-size: 14px;
   font-weight: 500;
 }
+
 p.navigator:hover {
   background-color: rgb(192, 192, 192);
 }
@@ -175,29 +215,41 @@ p.navigator:hover {
   position: absolute;
   top: 150px;
   left: 280px;
-  width: 1500px;
-  height: 800px;
+  width:80%;
+  height: fit-content;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .video {
-  margin-right: 30px;
+  margin-right: 0px;
   margin-bottom: 50px;
+  width:30%;
+  
 }
 
 .video h3 {
   background-color: blue;
-  width: 340px;
-  height: 200px;
+  height: 210px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   margin-top: 0px;
+  transition: 0.3s;
 }
+
+.video h3:hover {
+  background-color: rgb(220, 220, 220);
+  color:black;
+ 
+}
+
+
+
 div.profile {
   display: flex;
   justify-content: center;
@@ -210,6 +262,7 @@ div.profile {
 }
 .info {
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .info h2 {
@@ -222,3 +275,4 @@ div.profile {
   color: gray;
   font-size: 14px;
 }
+
